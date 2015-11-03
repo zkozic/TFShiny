@@ -12,6 +12,8 @@ shinyUI(
           selectInput(inputId = 'gene', label = 'Select gene:', choices = sort(genes), width = '100%')
         ),
         mainPanel(
+          radioButtons(inputId = 'which.tfs', label = NULL, choices = c('Cortex TFs' = 'cortex', 'All TFs' = 'allTFs'), selected = 'cortex', inline = T),
+          br(),
           dataTableOutput(outputId = 'enrichmentTable')
         )
       )
